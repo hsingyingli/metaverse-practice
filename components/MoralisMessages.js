@@ -10,7 +10,7 @@ const MoralisMessages = ({isSend, setIsSend, ...rest}) => {
   const [firstLoad, setFirstLoad] = useState(true)
   const toast = useToast();
   const updateRef = useRef(null);
-  const {data, isLoading, error} = useMoralisQuery(
+  const {data, isLoading} = useMoralisQuery(
     'Message',
     (query) =>
       query

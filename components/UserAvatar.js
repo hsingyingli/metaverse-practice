@@ -20,6 +20,7 @@ import {
   EditablePreview,
   Tooltip,
   CircularProgress,
+  useColorModeValue
 } from '@chakra-ui/react';
 import {useMemo, useState, useEffect} from 'react';
 import {useMoralis} from 'react-moralis';
@@ -30,12 +31,15 @@ const UserAvatar = () => {
   const {user, setUserData, isUserUpdating, logout} = useMoralis();
   const username = useMemo(() => user?.get('username'), [user]);
 
-  const handleOnSaveUsername = () => {
+  const handleOnSaveUsername = (e) => {
+    e.preventDefault()
     if (name.length > 0) {
       setUserData({
         username: name,
       });
       setName('');
+      window.location.reload()
+
     }
   };
 
@@ -63,7 +67,7 @@ const UserAvatar = () => {
           <PopoverContent>
             <PopoverArrow />
             <PopoverCloseButton />
-            <PopoverHeader pt={4} fontWeight="bold" color="teal.100">
+            <PopoverHeader pt={4} fontWeight="bold" color={useColorModeValue('teal.600', 'teal.200')}>
               User Info
             </PopoverHeader>
             <PopoverBody>
@@ -73,7 +77,7 @@ const UserAvatar = () => {
                 align="stretch"
               >
                 <Box>
-                  <Heading fontSize="md" pb={1} color="teal.100">
+                  <Heading fontSize="md" pb={1} color={useColorModeValue('teal.600', 'teal.200')}>
                     Username:
                   </Heading>
                   <Tooltip label="click to edit" placement="top">
