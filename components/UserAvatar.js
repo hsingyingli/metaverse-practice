@@ -30,7 +30,7 @@ const UserAvatar = () => {
   const [name, setName] = useState('');
   const {user, setUserData, isUserUpdating, logout} = useMoralis();
   const username = useMemo(() => user?.get('username'), [user]);
-
+  const textColor = useColorModeValue('teal.600', 'teal.200')
   const handleOnSaveUsername = (e) => {
     e.preventDefault()
     if (name.length > 0) {
@@ -67,7 +67,7 @@ const UserAvatar = () => {
           <PopoverContent>
             <PopoverArrow />
             <PopoverCloseButton />
-            <PopoverHeader pt={4} fontWeight="bold" color={useColorModeValue('teal.600', 'teal.200')}>
+            <PopoverHeader pt={4} fontWeight="bold" color={textColor}>
               User Info
             </PopoverHeader>
             <PopoverBody>
@@ -77,7 +77,7 @@ const UserAvatar = () => {
                 align="stretch"
               >
                 <Box>
-                  <Heading fontSize="md" pb={1} color={useColorModeValue('teal.600', 'teal.200')}>
+                  <Heading fontSize="md" pb={1} color={textColor}>
                     Username:
                   </Heading>
                   <Tooltip label="click to edit" placement="top">
