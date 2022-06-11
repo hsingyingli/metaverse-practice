@@ -32,7 +32,7 @@ const Message = ({message}) => {
             {message.get('message')}
           </Text>
           <Avatar
-            src={`https://avatars.dicebear.com/api/pixel-art/${owner}.svg`}
+            src={`https://avatars.dicebear.com/api/pixel-art/${message.get('ethAddress')}.svg`}
             mx={2}
             size="sm"
           />

@@ -1,11 +1,15 @@
-import { Container } from "@chakra-ui/react"
+import {Box, Container} from '@chakra-ui/react';
+import Header from './Header';
 
 const Layout = ({children}) => {
   return (
-    <Container maxW='container.lg'  minH='100vh' py='24px' >
-      {children}
-    </Container>
-  )
-}
+    <Box>
+      <Header />
+      <Container maxW="container.lg" maxH="100vh" >
+        {children}
+      </Container>
+    </Box>
+  );
+};
 
-export default Layout
+export default Layout;
