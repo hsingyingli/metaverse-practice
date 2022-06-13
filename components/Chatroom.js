@@ -12,7 +12,7 @@ const ChatRoom = () => {
   return (
     <Box
       mt={20}
-      h="calc(100vh - 100px)"
+      maxH="calc(100vh - 100px)"
       w="100%"
       minW="350px"
       display="flex"

@@ -17,19 +17,21 @@ const Header = () => {
   const {toggleColorMode} = useColorMode()
   return (
     <Box
+      as="main"
       position="fixed"
       left={0}
       top={0}
-      w="100vw"
+      w="100%"
       overflow="hidden"
       bgColor= {useColorModeValue("#FFFAF0", "#151516")}
       boxShadow="0 0 0.5px 0.5px gray"
       py={2}
       zIndex={5}
     >
-      <Container maxW="container.lg">
+      <Container maxW="container.md">
         <Flex alignItems="center">
           <Spacer />
+          
           <UserAvatar/>
           <IconButton
             mx={2}
