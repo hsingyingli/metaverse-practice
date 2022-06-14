@@ -31,10 +31,10 @@ const UserAvatar = () => {
   const {user, setUserData, isUserUpdating, logout} = useMoralis();
   const username = useMemo(() => user?.get('username'), [user]);
   const textColor = useColorModeValue('teal.600', 'teal.200')
-  const handleOnSaveUsername = (e) => {
+  const handleOnSaveUsername = async (e) => {
     e.preventDefault()
     if (name.length > 0) {
-      setUserData({
+      await setUserData({
         username: name,
       });
       setName('');
